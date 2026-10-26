@@ -4,10 +4,17 @@
 __pycache__/
 *.py[cod]
 *$py.class
-*.pyd
+
+# Python cache / test / lint
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
 
 # ==============================
-# Virtual environments
+# Virtual environment
 # ==============================
 .venv/
 venv/
@@ -15,9 +22,45 @@ env/
 ENV/
 
 # ==============================
-# Build / distribution
-# PyInstaller etc.
+# Application data
+# ==============================
+tasks.db
+tasks.db-journal
+tasks.db-shm
+tasks.db-wal
+
+settings.json
+
+# SQLite temporary files
+*.db-journal
+*.db-shm
+*.db-wal
+
+# ==============================
+# PyInstaller
 # ==============================
 build/
 dist/
 *.spec
+
+# ==============================
+# IDE / Editor
+# ==============================
+.vscode/
+.idea/
+*.code-workspace
+
+# ==============================
+# OS generated files
+# ==============================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ==============================
+# Logs and temporary files
+# ==============================
+*.log
+*.tmp
+*.temp
+~$*

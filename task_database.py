@@ -41,5 +41,9 @@ class TaskDatabase:
         with self.con() as x:
             if subs:x.execute('UPDATE sub_tasks SET completed=1,completed_at=?,updated_at=? WHERE main_id=?',(t,t,i))
             x.execute('UPDATE main_tasks SET completed=1,completed_at=?,updated_at=? WHERE id=?',(t,t,i))
+    def delete_main(self,i):
+        with self.con() as x:x.execute('DELETE FROM main_tasks WHERE id=?',(i,))
+    def delete_sub(self,i):
+        with self.con() as x:x.execute('DELETE FROM sub_tasks WHERE id=?',(i,))
     def restore_main(self,i):
         with self.con() as x:x.execute('UPDATE main_tasks SET completed=0,completed_at=NULL,updated_at=? WHERE id=?',(self.now(),i))
