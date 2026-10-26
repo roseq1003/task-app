@@ -1,0 +1,4 @@
+customtkinter>=5.2,<6
+tkcalendar>=1.6,<2
+babel>=2.12,<3
+pyinstaller>=6,<7
